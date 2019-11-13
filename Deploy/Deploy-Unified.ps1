@@ -21,7 +21,7 @@ if (-not [String]::IsNullOrEmpty($subscription)) {
     az account set --subscription $subscription
 }
 
-Push-Location powershell
+Push-Location _RPSLS-Docker container-CI/drop/powershell
 
 ## Deploy ARM
 & ./Deploy-Arm-Azure.ps1 -resourceGroup $resourceGroup -location $location -clientId $clientId -password $password
