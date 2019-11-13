@@ -8,7 +8,14 @@ Param(
     [parameter(Mandatory=$false)][bool]$deployGlobalSecret=$false,
     [parameter(Mandatory=$true)][string]$tenant
 )
-
+Write-Output "Logging in to Azure with a service principal..."
+az login `
+    --service-principal `
+    --username $clientId `
+    --password $password `
+    --tenant $tenant
+Write-Output "Done"
+Write-Output ""
 $gValuesFile="configFile.yaml"
 
 Push-Location $($MyInvocation.InvocationName | Split-Path)
