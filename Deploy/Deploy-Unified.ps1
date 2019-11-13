@@ -5,7 +5,8 @@ Param(
     [parameter(Mandatory=$true)][string]$clientId,
     [parameter(Mandatory=$true)][string]$password,
     [parameter(Mandatory=$false)][string]$tag="latest",
-    [parameter(Mandatory=$false)][bool]$deployGlobalSecret=$false
+    [parameter(Mandatory=$false)][bool]$deployGlobalSecret=$false,
+    [parameter(Mandatory=$true)][string]$tenant
 )
 
 $gValuesFile="configFile.yaml"
